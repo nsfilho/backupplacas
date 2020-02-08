@@ -1,0 +1,56 @@
+{
+    "name": "backupplacas",
+    "version": "1.0.0",
+    "description": "Efetua backup das placas de automação",
+    "main": "src/index.ts",
+    "author": "Nelio Santos",
+    "license": "UNLICENSED",
+    "dependencies": {
+        "@types/node": "^13.7.0",
+        "axios": "^0.19.2",
+        "dotenv": "^8.2.0",
+        "ts-node": "^8.6.2",
+        "typescript": "^3.7.5"
+    },
+    "devDependencies": {
+        "@types/jest": "^25.1.2",
+        "@typescript-eslint/eslint-plugin": "^2.19.0",
+        "@typescript-eslint/parser": "^2.19.0",
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb": "^18.0.1",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-import-resolver-typescript": "^2.0.0",
+        "eslint-plugin-import": "^2.20.1",
+        "eslint-plugin-prettier": "^3.1.2",
+        "husky": "^4.2.1",
+        "jest": "^25.1.0",
+        "nodemon": "^2.0.2",
+        "prettier": "^1.19.1",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^25.2.0",
+        "typedoc": "^0.16.9"
+    },
+    "scripts": {
+        "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src/",
+        "format": "prettier --write src/**/*.ts src/**/*.tsx src/**/*.css package.json",
+        "start": "ts-node -r dotenv/config src/index.ts",
+        "build": "tsc",
+        "docs": "typedoc --out docs ./src --exclude \"**/*.test.ts\"",
+        "test": "jest --detectOpenHandles",
+        "dev": "nodemon --watch src/**/*.ts --exec ts-node src/index.ts"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn build && lint-staged"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.+(css|less|scss|md)": [
+            "prettier --write"
+        ],
+        "src/**/*.+(js|jsx|ts|tsx)": [
+            "eslint --fix",
+            "prettier --write"
+        ]
+    }
+}
