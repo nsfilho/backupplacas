@@ -11,5 +11,5 @@ export const mkOutDir = (): void => {
 export const saveFile = (board: BoardConfig): void => {
     const pathFile = join(OUTPUT_DIR, `${board.ip.replace('.', '_')}.txt`);
     console.log(`Saving ${board.ip} to file: ${pathFile}`);
-    writeFileSync(pathFile, JSON.stringify(board.config, null, 4));
+    if (board.config !== undefined) writeFileSync(pathFile, JSON.stringify(board.config, null, 4));
 };
