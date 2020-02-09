@@ -1,7 +1,7 @@
 module.exports = {
     env: {
         es6: true,
-        node: true
+        node: true,
     },
     extends: [
         'airbnb-base',
@@ -11,16 +11,16 @@ module.exports = {
         'plugin:import/typescript',
         'plugin:prettier/recommended',
         'prettier',
-        'prettier/@typescript-eslint'
+        'prettier/@typescript-eslint',
     ],
     globals: {
         Atomics: 'readonly',
-        SharedArrayBuffer: 'readonly'
+        SharedArrayBuffer: 'readonly',
     },
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 2018,
-        sourceType: 'module'
+        sourceType: 'module',
     },
     plugins: ['@typescript-eslint', 'import', 'prettier'],
     rules: {
@@ -33,16 +33,17 @@ module.exports = {
                 js: 'never',
                 jsx: 'never',
                 ts: 'never',
-                tsx: 'never'
-            }
-        ]
+                tsx: 'never',
+            },
+        ],
+        'no-console': 0,
     },
     settings: {
         'import/parsers': {
-            '@typescript-eslint/parser': ['.ts', '.tsx']
+            '@typescript-eslint/parser': ['.ts', '.tsx'],
         },
         'import/resolver': {
-            typescript: {}
-        }
-    }
+            typescript: {},
+        },
+    },
 };

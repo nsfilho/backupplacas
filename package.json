@@ -3,11 +3,13 @@
     "version": "1.0.0",
     "description": "Efetua backup das placas de automação",
     "main": "src/index.ts",
+    "bin": "build/index.js",
     "author": "Nelio Santos",
     "license": "UNLICENSED",
     "dependencies": {
         "@types/node": "^13.7.0",
         "axios": "^0.19.2",
+        "commander": "^4.1.1",
         "dotenv": "^8.2.0",
         "ts-node": "^8.6.2",
         "typescript": "^3.7.5"
