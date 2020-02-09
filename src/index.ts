@@ -29,7 +29,7 @@ const getConfig = async (ip: string): Promise<BoardConfig> => {
                 config: config.data,
             };
     } catch (err) {
-        console.error(`Placa: ${ip} -> ${err}`);
+        console.error(`Placa[${ip}]: Erro -> ${err}`);
     }
     return {
         ip,
